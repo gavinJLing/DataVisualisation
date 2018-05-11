@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="myd3.js"></script>
+<script type="text/javascript" src="lib/d3-5.3.0/d3.min.js"></script>
+</head>
+<body>
+
+<p> This is a test</p>
+<p> this is another test</p>
+<p> This is a test</p>
+<p> this is another test</p>
+<p> This is a test</p>
+<p> this is another test</p>
+
+<script type="text/javascript">
+
+d3.select("body")
+.selectAll("p")
+.data([4, 8, 15, 16, 23, 42])
+.enter().append("p")
+  .text(function(d) { return "I’m number " + d + "!"; });
+  
+  
+</script>
+</body>
+</html>
