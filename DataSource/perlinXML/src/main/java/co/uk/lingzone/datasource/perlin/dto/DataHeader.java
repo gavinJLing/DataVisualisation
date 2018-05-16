@@ -2,29 +2,29 @@ package co.uk.lingzone.datasource.perlin.dto;
 
 public class DataHeader {
 	private String format;
-	
+
 	private double xOffset;
 	private int    xCount;
 	private double xStep;
-	
+
 	private double yOffset;
 	private int    yCount;
 	private double yStep;
-	
+
 	private double zOffset;
 	private int    zCount;
 	private double zStep;
-	
-	
-	
+
+
+
 	@Override
 	public String toString() {
 	    StringBuilder sb = new StringBuilder();
 	    sb.append("X ").append(xOffset).append(" -> (").append(xCount).append(" x ").append(xStep).append(" ,");
 	    sb.append("Y ").append(yOffset).append(" -> (").append(yCount).append(" x ").append(yStep).append(" ,");
 	    sb.append("Z ").append(zOffset).append(" -> (").append(zCount).append(" x ").append(zStep).append("\n");
-	    
-        
+
+
 	    return sb.toString();
 	}
 
@@ -147,11 +147,11 @@ public class DataHeader {
     public void setzStep(double zStep) {
         this.zStep = zStep;
     }
-	
-	
 
-	
-	
-	
-	
+
+
+
+
+
+
 }

@@ -11,23 +11,6 @@ import co.uk.lingzone.datasource.perlin.service.Data3DService;
 @Configuration
 public class Config {
     
-    @Bean
-    public Data3D purlinData() {
-        return new Data3D();
-    }
-    
-    @Bean
-    public DataHeader dataHeader() {
-        return new DataHeader();
-    }
-    
-    
-      
-    @Bean
-    public Data3D datasample() {
-        return new Data3D();
-    }
-    
     
     @Bean
     public Data3DService data3DService() {

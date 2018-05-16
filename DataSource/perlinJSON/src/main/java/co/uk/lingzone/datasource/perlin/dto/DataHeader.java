@@ -20,9 +20,9 @@ public class DataHeader {
 	@Override
 	public String toString() {
 	    StringBuilder sb = new StringBuilder();
-	    sb.append("X ").append(xOffset).append(" -> (").append(xCount).append(" x ").append(xStep).append(" ,");
-	    sb.append("Y ").append(yOffset).append(" -> (").append(yCount).append(" x ").append(yStep).append(" ,");
-	    sb.append("Z ").append(zOffset).append(" -> (").append(zCount).append(" x ").append(zStep).append("\n");
+	    sb.append("X ").append(xOffset).append(" -> (").append(xCount).append(" x ").append(xStep).append(") ,");
+	    sb.append("Y ").append(yOffset).append(" -> (").append(yCount).append(" x ").append(yStep).append(") ,");
+	    sb.append("Z ").append(zOffset).append(" -> (").append(zCount).append(" x ").append(zStep).append(")\n");
 	    
         
 	    return sb.toString();

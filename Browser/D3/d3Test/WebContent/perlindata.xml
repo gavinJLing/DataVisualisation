@@ -1,0 +1,23 @@
+
+<Data3D>
+  <header>
+    <format>PERLIN</format>
+    <xOffset>0.5</xOffset>
+    <xCount>1</xCount>
+    <xStep>0.01</xStep>
+    <yOffset>0.5</yOffset>
+    <yCount>1</yCount>
+    <yStep>0.01</yStep>
+    <zOffset>0.3</zOffset>
+    <zCount>1</zCount>
+    <zStep>0.01</zStep>
+  </header>
+  <values>
+    <values>
+      <xVal>0.5</xVal>
+      <yVal>0.5</yVal>
+      <zVal>0.3</zVal>
+      <noiseVal>-0.25</noiseVal>
+    </values>
+  </values>
+</Data3D>

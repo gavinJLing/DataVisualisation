@@ -1,0 +1,5 @@
+ [
+    { "xVal": 0.5, "yVal": 0.5, "zVal": 0.3, "noiseVal": 100} ,
+    { "xVal": 0.7, "yVal": 0.6, "zVal": 0.3, "noiseVal": 200} ,
+    { "xVal": 0.8, "yVal": 0.7, "zVal": 0.3, "noiseVal": 300} 
+  ]

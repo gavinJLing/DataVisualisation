@@ -25,10 +25,13 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
-	
+
 	// This overrides the REST JSON response serialiser to serialise a POJO as XML, instead of JSON
     compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.9.5'
 
-	
+		// https://mvnrepository.com/artifact/org.codehaus.woodstox/woodstox-core-asl
+		compile group: 'org.codehaus.woodstox', name: 'woodstox-core-asl', version: '4.4.1'
+
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

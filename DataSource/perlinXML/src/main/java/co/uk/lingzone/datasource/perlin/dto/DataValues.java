@@ -1,9 +1,16 @@
 package co.uk.lingzone.datasource.perlin.dto;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+
+
 public class DataValues {
+//    @JacksonXmlProperty(localName="x")
     private Double xVal = 0.00D;
+//    @JacksonXmlProperty(localName="y")
     private Double yVal = 0.00D;
+//    @JacksonXmlProperty(localName="z")
     private Double zVal = 0.00D;
+    @JacksonXmlProperty(isAttribute= true)
     private Double noiseVal = 0.00D;
 
     public DataValues(double x, double y, double z, double noise) {
