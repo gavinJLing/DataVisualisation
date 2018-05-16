@@ -29,20 +29,20 @@ public class Data3DService {
         purlinData.getHeader().setzCount(zCount);
         purlinData.getHeader().setzStep(zStep);
         
-        double xpnMax = xOffset + xStep * (xCount);
-        double ypnMax = yOffset + yStep * (yCount);
-        double zpnMax = zOffset + zStep * (zCount);
+        double xpnMax = xOffset + (xStep * xCount);
+        double ypnMax = yOffset + (yStep * yCount);
+        double zpnMax = zOffset + (zStep * zCount);
         
         for (double xpn = xOffset; xpn <xpnMax; xpn+= xStep) {
             for (double ypn = yOffset; ypn <  ypnMax; ypn+= yStep) {
                 for (double zpn = zOffset; zpn < zpnMax; zpn+= zStep) {
                     // use GItHub Perlin noise generator alg. (Ken Perlin (c) 2002)
                     
-                    double p = ImprovedNoise.noise(xpn, ypn , zpn); 
+                    double noise = ImprovedNoise.noise(xpn, ypn , zpn); 
                     
-                    purlinData.add(xpn, ypn, p);
+                    purlinData.add(xpn, ypn, zpn , noise);
                     
-                    System.out.println("Gen: x:"+xpn + ", y:"+ypn + " ,z:"+zpn + " give value p:" + p);
+                    System.out.println("Gen: x:"+xpn + ", y:"+ypn + " ,z:"+zpn + " give value p:" + noise);
                 }
             }
         

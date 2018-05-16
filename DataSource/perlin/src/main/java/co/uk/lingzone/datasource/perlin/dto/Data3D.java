@@ -13,8 +13,8 @@ public class Data3D {
     
     
   
-    public void add(double x, double y , double z){
-        values.add(new DataValues(x, y, z));
+    public void add(double x, double y , double z, double noise){
+        values.add(new DataValues(x, y, z, noise));
     }
     
     

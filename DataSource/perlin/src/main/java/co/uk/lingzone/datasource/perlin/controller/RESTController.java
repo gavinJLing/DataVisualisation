@@ -15,7 +15,8 @@ public class RESTController {
     @Autowired
     private Data3DService data3DService;
     
-    
+    private int defaultMinCount = 1;
+    private double defaultMinStep = 0.0001D;
     
     
     @RequestMapping("/ping")
@@ -39,9 +40,25 @@ public class RESTController {
             @RequestParam(value = "yCount", defaultValue = "3") int yCount,
 
             @RequestParam(value = "zOffset", defaultValue = "0.3") double zOffset,
-            @RequestParam(value = "zStep", defaultValue = "0.0") double zStep,
+            @RequestParam(value = "zStep", defaultValue = "0.01") double zStep,
             @RequestParam(value = "zCount", defaultValue = "1") int zCount) {
 
+        // validate range values to ensure min. values
+        xCount = xCount< defaultMinCount ? defaultMinCount : xCount;
+        yCount = yCount< defaultMinCount ? defaultMinCount : yCount;
+        zCount = zCount< defaultMinCount ? defaultMinCount : zCount;
+        
+        xStep = Double.compare(xStep,defaultMinStep)==0 ? defaultMinStep : yStep;
+        yStep = Double.compare(yStep,defaultMinStep)==0 ? defaultMinStep : yStep;
+        zStep = Double.compare(zStep,defaultMinStep)==0 ? defaultMinStep : zStep;
+        
+        xOffset = xOffset < -1 ? -1 : xOffset;
+        xOffset = xOffset >  1 ?  1 : xOffset;
+        yOffset = yOffset < -1 ? -1 : yOffset;
+        yOffset = yOffset >  1 ?  1 : yOffset;
+        zOffset = zOffset < -1 ? -1 : zOffset;
+        zOffset = zOffset >  1 ?  1 : zOffset;
+        
         Data3D data = data3DService.generate3dnoise(xOffset, xStep, xCount, yOffset, yStep, yCount, zOffset, zStep, zCount);
 
         System.out.println(data);
