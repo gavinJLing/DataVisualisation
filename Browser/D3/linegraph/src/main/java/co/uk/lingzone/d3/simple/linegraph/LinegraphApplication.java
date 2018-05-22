@@ -1,12 +1,12 @@
-package co.uk.lingzone.datasource.perlin;
+package co.uk.lingzone.d3.simple.linegraph;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PerlinDataSourceApplication {
+public class LinegraphApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PerlinDataSourceApplication.class, args);
+		SpringApplication.run(LinegraphApplication.class, args);
 	}
 }

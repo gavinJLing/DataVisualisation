@@ -2,12 +2,10 @@ package co.uk.lingzone.datasource.perlin.dto;
 
 import java.util.ArrayList;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 public class Data3D {
 	
-    @Autowired
-	private DataHeader header;
+
+	private DataHeader header = new DataHeader();
 	
     private ArrayList<DataValues> values =new ArrayList<DataValues>();
     

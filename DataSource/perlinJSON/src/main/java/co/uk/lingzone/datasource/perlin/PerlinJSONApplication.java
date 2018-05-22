@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PerlinDataSourceApplication {
+public class PerlinJSONApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PerlinDataSourceApplication.class, args);
+		SpringApplication.run(PerlinJSONApplication.class, args);
 	}
 }

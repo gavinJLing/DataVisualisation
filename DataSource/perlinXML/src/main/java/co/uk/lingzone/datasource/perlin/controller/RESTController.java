@@ -1,6 +1,7 @@
 package co.uk.lingzone.datasource.perlin.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +19,7 @@ public class RESTController {
     private int defaultMinCount = 1;
     private double defaultMinStep = 0.0001D;
     
-    
+    @CrossOrigin(origins = "http://localhost:8080")
     @RequestMapping("/ping")
     public String ping() {
         return "Hi";
@@ -30,6 +31,7 @@ public class RESTController {
     /*
      * Default to a small grid of x,y,z Perlin values
      */
+	@CrossOrigin(origins = "http://localhost:8080")
     @RequestMapping("/perlin")
     public Data3D generate(@RequestParam(value = "xOffset", defaultValue = "0.5") double xOffset,
             @RequestParam(value = "xStep", defaultValue = "0.01") double xStep,

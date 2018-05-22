@@ -1,21 +1,19 @@
 package co.uk.lingzone.datasource.perlin.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import co.uk.lingzone.datasource.perlin.dto.Data3D;
 import co.uk.lingzone.datasource.perlin.generator.ImprovedNoise;
 
 
 public class Data3DService {
 
-    @Autowired
     Data3D purlinData;
     
     public Data3D generate3dnoise(double xOffset, double xStep,int xCount , 
                                   double yOffset, double yStep,int yCount ,
                                   double zOffset, double zStep,int zCount) {
         
-        
+        purlinData = new Data3D();
+                
         purlinData.getHeader().setFormat("PERLIN");
         purlinData.getHeader().setxOffset(xOffset);
         purlinData.getHeader().setxCount(xCount);
