@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>PlotXML 1</title>
+<script type="text/javascript" src="js/myd3.js"></script>
+<!-- script src="lib/d3-5.3.0/d3.js"></script -->
+<script src="http://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	var screenWidth = 350;
+	var screenHeight= 350
+	var maxCircleRadius= 100;
+
+	var url        = "http://localhost:8081/perlin?xCount=4&yCount=1&zCount=1"
+    var nScale     = d3.scaleLinear();
+    var xScale     = d3.scaleLinear();
+	var yScale     = d3.scaleLinear();	
+	var colourScale= d3.scaleOrdinal(d3.schemeCategory10).range();
+	var offsets    = [];
+	var steps      = []
+	var counts     = [];
+	var domainMax  = [];
+	var domainNoiseRng= [];
+
+	function render( xmlData) {
+		
+		initRanges(xmlData);
+
+		var xmlDom = d3.select(xmlData.documentElement);
+		
+		// inverted range - to position y-0 at bottom of screen
+		yScale.domain([offsets.y, domainMax.y]).rangeRound([maxCircleRadius, screenHeight -maxCircleRadius]);
+		xScale.domain([offsets.x, domainMax.x]).rangeRound([maxCircleRadius, screenWidth - maxCircleRadius]);
+		nScale.domain([domainNoiseRng.min, domainNoiseRng.max]).rangeRound([0,maxCircleRadius]);
+		
+		var svg = d3.select("body").append("svg")
+		   	.attr("width", screenWidth)
+			.attr("height", screenHeight);
+	
+		
+	
+		// Data bind
+		var circles = svg.selectAll("circle").data( xmlDom.selectAll("data").nodes() );
+
+		// Enter
+		circles.enter().append("circle")
+			.attr("r", d => getRadiusVal(d) ) 
+			.attr("cx", d => getXval(d) ) 
+		    .attr("cy", d => getYval(d) )
+		    .attr("fill", d => getColour(d) )
+		    .attr("stroke-width", 2).attr("stroke", "black").attr("fill-opacity" ,0.1);
+
+
+		
+		// Update
+//		circles
+//		    .attr("cx", function(d){
+//		    	var xVal = parseFloat(d.select("xVal").text())  ;
+//				console.log(i + " xVal=" + xVal +100 );
+//				return xVal;
+//		    	}  
+//		    )
+//		    .attr("cy", function(d){
+//				var yVal = parseFloat(d3.select(d).select("yVal").text())  ;
+//				console.log(i +"  yVal=" + yVal  );
+//				return yVal;
+//		    	}  
+//		    );
+		    
+
+//		// exit
+//		circles.exit().remove();
+		
+
+  	}
+	
+
+	function initRanges( xmlData){
+		offsets["x"] =  parseFloat(xmlData.documentElement.getElementsByTagName("xOffset")[0].innerHTML);
+		offsets["y"] =  parseFloat(xmlData.documentElement.getElementsByTagName("yOffset")[0].innerHTML);
+		offsets["z"] =  parseFloat(xmlData.documentElement.getElementsByTagName("zOffset")[0].innerHTML);
+
+		steps["x"]   =  parseFloat(xmlData.documentElement.getElementsByTagName("xStep")[0].innerHTML);
+		steps["y"]   =  parseFloat(xmlData.documentElement.getElementsByTagName("yStep")[0].innerHTML);
+		steps["z"]   =  parseFloat(xmlData.documentElement.getElementsByTagName("zStep")[0].innerHTML);
+		
+		counts["x"]  =  parseFloat(xmlData.documentElement.getElementsByTagName("xCount")[0].innerHTML);
+		counts["y"]  =  parseFloat(xmlData.documentElement.getElementsByTagName("yCount")[0].innerHTML);
+		counts["z"]  =  parseFloat(xmlData.documentElement.getElementsByTagName("zCount")[0].innerHTML);
+		
+		domainMax["x"] = offsets.x + (counts.x * steps.x);
+		domainMax["y"] = offsets.y + (counts.y * steps.y);
+		domainMax["z"] = offsets.z + (counts.z * steps.z);
+		
+
+		domainNoiseRng["min"] = parseFloat(xmlData.documentElement.getElementsByTagName("minNoise")[0].innerHTML);
+		domainNoiseRng["max"] = parseFloat(xmlData.documentElement.getElementsByTagName("maxNoise")[0].innerHTML);
+		
+	}
+
+
+	function getXval(d){
+		var x = xScale(parseFloat( d3.select(d).select("xVal").text()  ) );
+		console.log("x= " + x);
+		return x
+	}
+	function getYval(d){
+		var y = yScale(parseFloat( d3.select(d).select("yVal").text()  ) );
+		console.log("y= " + y);
+		return y
+	}
+
+	function getNoiseVal(d){ 
+		var noiseVal = parseFloat(d.getAttribute("noiseVal"));
+		//console.log(" noise = "+ noiseVal);
+		return noiseVal;
+	}
+
+	function getRadiusVal(d){ 
+		var noiseVal = getNoiseVal(d)  //
+		var radius   = nScale(noiseVal ); 
+		console.log(" radius =" +radius + " noise = "+ noiseVal);
+		return radius;
+	}
+	function getColour(d){ 
+		//var noiseVal = getNoiseVal(d)  // 0 -1
+		//var colourVal= d3.schemeReds(noiseVal ); 
+		//console.log(" colour =" +colourVal + " noise = "+ noiseVal);
+		//return colourVal;
+		return "steelblue";
+	}
+
+	
+ 	d3.xml(url, function (data) { render(data) });
+
+</script>
+</body>
+</html>
