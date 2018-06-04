@@ -3,52 +3,189 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>PlotXML 1</title>
+<link href="style.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="js/myd3.js"></script>
-<!-- script src="lib/d3-5.3.0/d3.js"></script -->
 <script src="http://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
 </head>
 <body>
+	<div id="container">
+		<div id="header">
+			<h1>Perlin Noise</h1>
+		</div>
+
+		<div id="content">
+			<div id="nav">
+				<h3>Nav</h3>
+				<ul>
+					<li><a class="selected" href="">Home</a></li>
+					<li><a href="">thing1</a></li>
+					<li><a href="">thing2</a></li>
+				</ul>
+			</div>
+			<div id="main"></div>
+		</div>
+
+		<div id="footer">
+			<h4>footer &copy; Gavin Ling 2018</h4>
+		</div>
 
 
+	</div>
 
+
+ <div id="XShiftPos"> 
+   <button> shift +X</button>
+ </div>
 
 <script type="text/javascript">
+	var screenWidth = 600;
+	var screenHeight= 350
+	var margin      = {left: 30, top: 30, right: 30, bottom: 30};
+	var innerWidth  = screenWidth - margin.left - margin.right;
+	var innerHeight = screenHeight -margin.top - margin.bottom;
 
-var thing;
-var url = "http://localhost:8081/perlin?xCount=4&yCount=2&zCount=2"
-//var url =window.location.origin + "/src/main/resources/static/data/jsonData.json"
+
+	var maxCircleRadius= 10;
 
 
+	var url        = "http://localhost:8081/perlin?xCount=40&yCount=10&zCount=1&ZOffset=0.3&yOffset=0.35"
+	var newUrl = url;
+    var nScale     = d3.scaleLinear();
+    var xScale     = d3.scaleLinear();
+	var yScale     = d3.scaleLinear();	
+	var colourScale= d3.scaleOrdinal(d3.schemeCategory10).range();
+	var offsets    = [];
+	var steps      = []
+	var counts     = [];
+	var domainMax  = [];
+	var domainNoiseRng= [];
 
-	console.log('startEror');
-
-	d3.xml(url, (error,xmlData) => {
-		if (error) throw error;
+	function render( xmlData) {
+		
+		initRanges(xmlData);
 
 		var xmlDom = d3.select(xmlData.documentElement);
+		
+		
+		xScale.domain([offsets.x, domainMax.x]).rangeRound([0, innerWidth]);
+		yScale.domain([offsets.y, domainMax.y]).rangeRound([innerHeight ,0 ]);
+		
+		nScale.domain([domainNoiseRng.min, domainNoiseRng.max]).rangeRound([0,maxCircleRadius]);
+		
+		var svg = d3.select("#main").append("svg")
+		   	.attr("width", screenWidth)
+			.attr("height", screenHeight);
+	
+		var g = svg.append("g")
+		    .attr("transform","translate(" + margin.left + "," + margin.top + ")");
+	
+		// Data bind
+		var circles = svg.selectAll("circle").data( xmlDom.selectAll("data").nodes() );
+
+		// Enter
+		circles.enter().append("circle")
+			.attr("r", d => getRadiusVal(d) ) 
+			.attr("cx", d => getXval(d) ) 
+		    .attr("cy", d => getYval(d) )
+		    .attr("fill", d => getColour(d) )
+		    .attr("stroke-width", 0.5).attr("stroke", "black").attr("fill-opacity" ,0.2);
 
 
-		d3.select("body")
-			.selectAll("p")
-			.data(xmlDom.selectAll("data").nodes())
-			.enter().append("p").text( (d ,i )=> {
-					var x=d3.select(d).select("xVal").text() ;
-					var y=d3.select(d).select("yVal").text() ;
-					var z=d3.select(d).select("zVal").text() ;
-					var n = d.getAttribute("noiseVal");
+		
+		// Update
+//		circles
+//		    .attr("cx", function(d){
+//		    	var xVal = parseFloat(d.select("xVal").text())  ;
+//				console.log(i + " xVal=" + xVal +100 );
+//				return xVal;
+//		    	}  
+//		    )
+//		    .attr("cy", function(d){
+//				var yVal = parseFloat(d3.select(d).select("yVal").text())  ;
+//				console.log(i +"  yVal=" + yVal  );
+//				return yVal;
+//		    	}  
+//		    );
+		    
 
-if(i==0){thing=d;}
+//		// exit
+//		circles.exit().remove();
+		
 
-					var textVal = i + "x="+ x + ",  y=" + y + ", z=" + z + ", n="+ n;
+  	}
+	
 
-					 return textVal
-					}
-				);
+	function initRanges( xmlData){
+		offsets["x"] =  parseFloat(xmlData.documentElement.getElementsByTagName("xOffset")[0].innerHTML);
+		offsets["y"] =  parseFloat(xmlData.documentElement.getElementsByTagName("yOffset")[0].innerHTML);
+		offsets["z"] =  parseFloat(xmlData.documentElement.getElementsByTagName("zOffset")[0].innerHTML);
 
-  	});
-	console.log('stoop')
+		steps["x"]   =  parseFloat(xmlData.documentElement.getElementsByTagName("xStep")[0].innerHTML);
+		steps["y"]   =  parseFloat(xmlData.documentElement.getElementsByTagName("yStep")[0].innerHTML);
+		steps["z"]   =  parseFloat(xmlData.documentElement.getElementsByTagName("zStep")[0].innerHTML);
+		
+		counts["x"]  =  parseFloat(xmlData.documentElement.getElementsByTagName("xCount")[0].innerHTML);
+		counts["y"]  =  parseFloat(xmlData.documentElement.getElementsByTagName("yCount")[0].innerHTML);
+		counts["z"]  =  parseFloat(xmlData.documentElement.getElementsByTagName("zCount")[0].innerHTML);
+		
+		domainMax["x"] = offsets.x + (counts.x * steps.x);
+		domainMax["y"] = offsets.y + (counts.y * steps.y);
+		domainMax["z"] = offsets.z + (counts.z * steps.z);
+		
+		console.log("domainMax[x]=" + domainMax["x"]  );
+		console.log("domainMax[y]=" + domainMax["y"]  );
+
+		domainNoiseRng["min"] = parseFloat(xmlData.documentElement.getElementsByTagName("minNoise")[0].innerHTML);
+		domainNoiseRng["max"] = parseFloat(xmlData.documentElement.getElementsByTagName("maxNoise")[0].innerHTML);
+		
+	}
 
 
+	function getXval(d){
+		var x = xScale(parseFloat( d3.select(d).select("xVal").text()  ) );
+		//console.log("x= " + x);
+		return x
+	}
+	function getYval(d){
+		var y = yScale(parseFloat( d3.select(d).select("yVal").text()  ) );
+		//console.log("y= " + y);
+		return y
+	}
+
+	function getNoiseVal(d){ 
+		var noiseVal = parseFloat(d.getAttribute("noiseVal"));
+		//console.log(" noise = "+ noiseVal);
+		return noiseVal;
+	}
+
+	function getRadiusVal(d){ 
+		var noiseVal = getNoiseVal(d)  //
+		var radius   = nScale(noiseVal ); 
+		//console.log(" radius =" +radius + " noise = "+ noiseVal);
+		return radius;
+	}
+	function getColour(d){ 
+		//var noiseVal = getNoiseVal(d)  // 0 -1
+		//var colourVal= d3.schemeReds(noiseVal ); 
+		//console.log(" colour =" +colourVal + " noise = "+ noiseVal);
+		//return colourVal;
+		return "steelblue";
+	}
+
+
+	d3.select("button").on("click", function(d) {
+		console.log("Button click seen!");
+		newUrl = url + "&yzOffset=0.6";
+		display();
+	});
+	
+
+	function display(){
+		d3.xml(newUrl, function (data) { render(data) });
+	}
+	    
+	display();
 </script>
 </body>
 </html>

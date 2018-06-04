@@ -1,0 +1,60 @@
+body {
+	background-color: lightgrey;
+}
+
+a {
+	text-decoration: none;
+	color: Steelblue;
+}
+
+h1, h2, h3, h4 {
+	margin: 0;
+}
+
+#header {
+	background-color: SteelBlue;
+	color: WHITE;
+	text-align: center;
+	padding: 10px;
+}
+
+#container {
+
+	background-color: white;
+	width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+
+}
+
+#content {
+	padding: 10px;
+}
+
+#main {
+	width: 600px;
+	float: right;
+	background-color: #f7f4f4;
+	
+} 
+#nav {
+	width: 180px;
+	float: left;
+}
+
+#nav .selected {
+	font-weight: bold;
+}
+
+#nav ul {
+	list-style: none;
+	padding: 10px;
+}
+
+#footer{
+	clear: both;
+	padding: 10px;
+	background-color: grey; 
+	text-align: right;
+}
+
