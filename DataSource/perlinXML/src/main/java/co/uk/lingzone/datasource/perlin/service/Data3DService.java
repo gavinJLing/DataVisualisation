@@ -38,6 +38,11 @@ public class Data3DService {
                     
                     double noise = ImprovedNoise.noise(xpn, ypn , zpn); 
                     
+                    // resolve max and min noise levels - helps to determin scales up front of graphic processing
+                    purlinData.getHeader().setMaxNoise(noise);
+                    purlinData.getHeader().setMinNoise(noise);
+                    
+                    
                     purlinData.add(xpn, ypn, zpn , noise);
                     
                     System.out.println("Gen: x:"+xpn + ", y:"+ypn + " ,z:"+zpn + " give value p:" + noise);

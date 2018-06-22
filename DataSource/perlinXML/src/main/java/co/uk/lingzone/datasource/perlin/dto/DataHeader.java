@@ -15,14 +15,17 @@ public class DataHeader {
 	private int    zCount;
 	private double zStep;
 
+	private double maxNoise = -1;
+	private double minNoise = 1;
+    
 
 
 	@Override
 	public String toString() {
 	    StringBuilder sb = new StringBuilder();
-	    sb.append("X ").append(xOffset).append(" -> (").append(xCount).append(" x ").append(xStep).append(" ,");
-	    sb.append("Y ").append(yOffset).append(" -> (").append(yCount).append(" x ").append(yStep).append(" ,");
-	    sb.append("Z ").append(zOffset).append(" -> (").append(zCount).append(" x ").append(zStep).append("\n");
+	    sb.append("X ").append(xOffset).append(" -> (").append(xCount).append(" x ").append(xStep).append(") ,");
+	    sb.append("Y ").append(yOffset).append(" -> (").append(yCount).append(" x ").append(yStep).append(") ,");
+	    sb.append("Z ").append(zOffset).append(" -> (").append(zCount).append(" x ").append(zStep).append(")\n");
 
 
 	    return sb.toString();
@@ -146,6 +149,34 @@ public class DataHeader {
 
     public void setzStep(double zStep) {
         this.zStep = zStep;
+    }
+
+
+
+    public double getMaxNoise() {
+        return maxNoise;
+    }
+
+
+
+    public void setMaxNoise(double noise) {
+        if ( noise > maxNoise ) {
+            this.maxNoise = noise;
+        }
+    }
+
+
+
+    public double getMinNoise() {
+        return minNoise;
+    }
+
+
+
+    public void setMinNoise(double noise) {
+        if ( noise < minNoise ) {
+            this.minNoise = noise;
+        }
     }
 
 

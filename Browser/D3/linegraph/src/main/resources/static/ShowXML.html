@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>PlotXML 1</title>
+<script type="text/javascript" src="js/myd3.js"></script>
+<!-- script src="lib/d3-5.3.0/d3.js"></script -->
+<script src="http://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+
+
+
+
+<script type="text/javascript">
+
+var thing;
+var url = "http://localhost:8081/perlin?xCount=4&yCount=2&zCount=2"
+//var url =window.location.origin + "/src/main/resources/static/data/jsonData.json"
+
+
+
+	console.log('startEror');
+
+	d3.xml(url, (error,xmlData) => {
+		if (error) throw error;
+
+		var xmlDom = d3.select(xmlData.documentElement);
+
+
+		d3.select("body")
+			.selectAll("p")
+			.data(xmlDom.selectAll("data").nodes())
+			.enter().append("p").text( (d ,i )=> {
+					var x=d3.select(d).select("xVal").text() ;
+					var y=d3.select(d).select("yVal").text() ;
+					var z=d3.select(d).select("zVal").text() ;
+					var n = d.getAttribute("noiseVal");
+
+if(i==0){thing=d;}
+
+					var textVal = i + "x="+ x + ",  y=" + y + ", z=" + z + ", n="+ n;
+
+					 return textVal
+					}
+				);
+
+  	});
+	console.log('stoop')
+
+
+</script>
+</body>
+</html>
