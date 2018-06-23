@@ -67,7 +67,7 @@
     {
      "name": "converters",
      "children": [
-      {"name": "Converters", "size": 721},
+      {"name": "Converters", "size": 22721},
       {"name": "DelimitedTextConverter", "size": 4294},
       {"name": "GraphMLConverter", "size": 9800},
       {"name": "IDataConverter", "size": 1314},
@@ -134,7 +134,7 @@
     {
      "name": "methods",
      "children": [
-      {"name": "add", "size": 593},
+      {"name": "add", "size": 1593},
       {"name": "and", "size": 330},
       {"name": "average", "size": 287},
       {"name": "count", "size": 277},
