@@ -1,0 +1,751 @@
+{
+  "Title": "Live JSON generator",
+  "version": 1,
+  "releaseDate": "2018-06-22T00:00:00.000Z",
+  "User": {
+    "name": "Gavin J Ling",
+    "id": "gavin.ling",
+    "role": "customer",
+    "email": [
+      "gavlar@example.com",
+      "thegavlar@example.org"
+    ]
+  },
+  "country": [
+    {
+      "name": "Germany",
+      "manufactures": [
+        {
+          "name": "Audi",
+          "modelTypes": [
+            {
+              "name": "SUV",
+              "models": [
+                {
+                  "name": "Q7"
+                },
+                {
+                  "name": "Q7S"
+                },
+                {
+                  "name": "Q5"
+                },
+                {
+                  "name": "Q5S"
+                },
+                {
+                  "name": "Q3"
+                }
+              ]
+            },
+            {
+              "name": "Coupe",
+              "models": [
+                {
+                  "name": "A1"
+                },
+                {
+                  "name": "A2"
+                },
+                {
+                  "name": "A3"
+                },
+                {
+                  "name": "A3S"
+                },
+                {
+                  "name": "A3RS"
+                },
+                {
+                  "name": "A4"
+                },
+                {
+                  "name": "A4S"
+                },
+                {
+                  "name": "A4RS"
+                },
+                {
+                  "name": "A5"
+                },
+                {
+                  "name": "A5S"
+                },
+                {
+                  "name": "A5RS"
+                },
+                {
+                  "name": "A6"
+                },
+                {
+                  "name": "A6S"
+                },
+                {
+                  "name": "A6RS"
+                },
+                {
+                  "name": "A7"
+                },
+                {
+                  "name": "A7S"
+                },
+                {
+                  "name": "A7RS"
+                },
+                {
+                  "name": "A8"
+                },
+                {
+                  "name": "A8S"
+                },
+                {
+                  "name": "A8RS"
+                }
+              ]
+            },
+            {
+              "name": "Saloon",
+              "models": [
+                {
+                  "name": "A4 sportback"
+                },
+                {
+                  "name": "A5 sportback"
+                },
+                {
+                  "name": "A6 sportback"
+                }
+              ]
+            },
+            {
+              "name": "Sports",
+              "models": [
+                {
+                  "name": "A8"
+                },
+                {
+                  "name": "A8 v10"
+                },
+                {
+                  "name": "A3 v12 spider"
+                }
+              ]
+            },
+            {
+              "name": "Electric",
+              "models": [
+                {
+                  "name": "eTron"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Porche",
+          "modelTypes": [
+            {
+              "name": "SUV",
+              "models": [
+                {
+                  "name": "Cayenne"
+                },
+                {
+                  "name": "Macan"
+                }
+              ]
+            },
+            {
+              "name": "Saloon",
+              "models": [
+                {
+                  "name": "Panamera"
+                }
+              ]
+            },
+            {
+              "name": "Sports",
+              "models": [
+                {
+                  "name": "911"
+                },
+                {
+                  "name": "718"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "BMW",
+          "modelTypes": [
+            {
+              "name": "SUV",
+              "models": [
+                {
+                  "name": "X1"
+                },
+                {
+                  "name": "X2"
+                },
+                {
+                  "name": "X3"
+                },
+                {
+                  "name": "X4"
+                }
+              ]
+            },
+            {
+              "name": "Saloon",
+              "models": [
+                {
+                  "name": "BMW 3 series"
+                },
+                {
+                  "name": "BMW 5 series"
+                },
+                {
+                  "name": "BMW 6 series"
+                },
+                {
+                  "name": "BMW 7 series"
+                }
+              ]
+            },
+            {
+              "name": "Sports",
+              "models": [
+                {
+                  "name": "M2 Competition"
+                },
+                {
+                  "name": "M3 Saloon"
+                },
+                {
+                  "name": "M4 Coupe"
+                },
+                {
+                  "name": "M5 Saloon"
+                },
+                {
+                  "name": "M6 Gran Coupe"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Japan",
+      "manufactures": [
+        {
+          "name": "Toyota",
+          "modelTypes": [
+            {
+              "name": "SUV",
+              "models": [
+                {
+                  "name": "Toy-suv1"
+                },
+                {
+                  "name": "Toy-suv2"
+                },
+                {
+                  "name": "Toy-suv3"
+                },
+                {
+                  "name": "Toy-suv4"
+                }
+              ]
+            },
+            {
+              "name": "Coupe",
+              "models": [
+                {
+                  "name": "Toy-coup1"
+                },
+                {
+                  "name": "Toy-coup2"
+                },
+                {
+                  "name": "Toy-coup3"
+                },
+                {
+                  "name": "Toy-coup4"
+                }
+              ]
+            },
+            {
+              "name": "Saloon",
+              "models": [
+                {
+                  "name": "Toy-sal1"
+                },
+                {
+                  "name": "Toy-sal2"
+                },
+                {
+                  "name": "Toy-sal3"
+                }
+              ]
+            },
+            {
+              "name": "Sports",
+              "models": [
+                {
+                  "name": "Toy-sprt1"
+                },
+                {
+                  "name": "Toy-sprt2"
+                },
+                {
+                  "name": "Toy-sprt3"
+                }
+              ]
+            },
+            {
+              "name": "Electric",
+              "models": [
+                {
+                  "name": "Toy-Elec1"
+                },
+                {
+                  "name": "Toy-Elec2"
+                },
+                {
+                  "name": "Toy-Elec3"
+                },
+                {
+                  "name": "Toy-Elec4"
+                },
+                {
+                  "name": "Toy-Elec5"
+                },
+                {
+                  "name": "Toy-Elec6"
+                },
+                {
+                  "name": "Toy-Elec7"
+                },
+                {
+                  "name": "Toy-Elec8"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Honda",
+          "modelTypes": [
+            {
+              "name": "SUV",
+              "models": [
+                {
+                  "name": "Hond-suv1"
+                },
+                {
+                  "name": "Hond-suv2"
+                },
+                {
+                  "name": "Hond-suv3"
+                },
+                {
+                  "name": "Hond-suv4"
+                },
+                {
+                  "name": "Hond-suv5"
+                },
+                {
+                  "name": "Hond-suv6"
+                },
+                {
+                  "name": "Hond-suv7"
+                },
+                {
+                  "name": "Hond-suv8"
+                }
+              ]
+            },
+            {
+              "name": "Coupe",
+              "models": [
+                {
+                  "name": "Hond-coup1"
+                },
+                {
+                  "name": "Hond-coup2"
+                },
+                {
+                  "name": "Hond-coup3"
+                },
+                {
+                  "name": "Hond-coup4"
+                }
+              ]
+            },
+            {
+              "name": "Saloon",
+              "models": [
+                {
+                  "name": "Hond-sal1"
+                },
+                {
+                  "name": "Hond-sal2"
+                },
+                {
+                  "name": "Hond-sal3"
+                },
+                {
+                  "name": "Hond-sal4"
+                },
+                {
+                  "name": "Hond-sal5"
+                },
+                {
+                  "name": "Hond-sal6"
+                },
+                {
+                  "name": "Hond-sal7"
+                },
+                {
+                  "name": "Hond-sal8"
+                },
+                {
+                  "name": "Hond-sal9"
+                }
+              ]
+            },
+            {
+              "name": "Sports",
+              "models": [
+                {
+                  "name": "Hond-sprt1"
+                },
+                {
+                  "name": "Hond-sprt2"
+                }
+              ]
+            },
+            {
+              "name": "Electric",
+              "models": [
+                {
+                  "name": "Hond-Elec1"
+                },
+                {
+                  "name": "Hond-Elec2"
+                },
+                {
+                  "name": "Hond-Elec3"
+                },
+                {
+                  "name": "Hond-Elec4"
+                },
+                {
+                  "name": "Hond-Elec5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Mazda",
+          "modelTypes": [
+            {
+              "name": "SUV",
+              "models": [
+                {
+                  "name": "Mazda-suv1"
+                }
+              ]
+            },
+            {
+              "name": "Coupe",
+              "models": [
+                {
+                  "name": "Mazda-coup1"
+                },
+                {
+                  "name": "Mazda-coup2"
+                }
+              ]
+            },
+            {
+              "name": "Saloon",
+              "models": [
+                {
+                  "name": "Mazda-sal1"
+                },
+                {
+                  "name": "Mazda-sal2"
+                }
+              ]
+            },
+            {
+              "name": "Sports",
+              "models": [
+                {
+                  "name": "Mazda-sprt1"
+                },
+                {
+                  "name": "Mazda-sprt2"
+                },
+                {
+                  "name": "Mazda-sprt3"
+                },
+                {
+                  "name": "Mazda-sprt4"
+                },
+                {
+                  "name": "Mazda-sprt5"
+                },
+                {
+                  "name": "Mazda-sprt6"
+                },
+                {
+                  "name": "Mazda-sprt7"
+                },
+                {
+                  "name": "Mazda-sprt8"
+                },
+                {
+                  "name": "Mazda-sprt9"
+                }
+              ]
+            },
+            {
+              "name": "Electric",
+              "models": [
+                {
+                  "name": "Mazda-Elec1"
+                },
+                {
+                  "name": "Mazda-Elec2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Mitsubishi",
+          "modelTypes": [
+            {
+              "name": "SUV",
+              "models": [
+                {
+                  "name": "Mitsu-suv1"
+                },
+                {
+                  "name": "Mitsu-suv2"
+                },
+                {
+                  "name": "Mitsu-suv3"
+                }
+              ]
+            },
+            {
+              "name": "Coupe",
+              "models": [
+                {
+                  "name": "Mitsu-coup1"
+                },
+                {
+                  "name": "Mitsu-coup2"
+                },
+                {
+                  "name": "Mitsu-coup3"
+                }
+              ]
+            },
+            {
+              "name": "Saloon",
+              "models": [
+                {
+                  "name": "Mitsu-sal1"
+                },
+                {
+                  "name": "Mitsu-sal2"
+                }
+              ]
+            },
+            {
+              "name": "Sports",
+              "models": [
+                {
+                  "name": "Mitsu-sprt1"
+                },
+                {
+                  "name": "Mitsu-sprt2"
+                },
+                {
+                  "name": "Mitsu-sprt3"
+                },
+                {
+                  "name": "Mitsu-sprt4"
+                }
+              ]
+            },
+            {
+              "name": "Electric",
+              "models": [
+                {
+                  "name": "Mitsu-Elec1"
+                },
+                {
+                  "name": "Mitsu-Elec2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Suzuki",
+          "modelTypes": [
+            {
+              "name": "SUV",
+              "models": [
+                {
+                  "name": "Suzuki-suv1"
+                }
+              ]
+            },
+            {
+              "name": "Coupe",
+              "models": [
+                {
+                  "name": "Suzuki-coup1"
+                }
+              ]
+            },
+            {
+              "name": "Saloon",
+              "models": [
+                {
+                  "name": "Suzuki-sal1"
+                },
+                {
+                  "name": "Suzuki-sal2"
+                }
+              ]
+            },
+            {
+              "name": "Sports",
+              "models": [
+                {
+                  "name": "Suzuki-sprt1"
+                }
+              ]
+            },
+            {
+              "name": "Electric",
+              "models": [
+                {
+                  "name": "Suzuki-Elec1"
+                }
+              ]
+            },
+            {
+              "name": "Commercial",
+              "models": [
+                {
+                  "name": "Suzuki-comm1"
+                },
+                {
+                  "name": "Suzuki-comm2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Nissan",
+          "modelTypes": [
+            {
+              "name": "SUV",
+              "models": [
+                {
+                  "name": "Nissan-suv1"
+                }
+              ]
+            },
+            {
+              "name": "Coupe",
+              "models": [
+                {
+                  "name": "Nissan-coup1"
+                },
+                {
+                  "name": "Nissan-coup2"
+                }
+              ]
+            },
+            {
+              "name": "Saloon",
+              "models": [
+                {
+                  "name": "Nissan-sal1"
+                }
+              ]
+            },
+            {
+              "name": "Sports",
+              "models": [
+                {
+                  "name": "Nissan-sprt1"
+                }
+              ]
+            },
+            {
+              "name": "Electric",
+              "models": [
+                {
+                  "name": "Nissan-Elec1"
+                },
+                {
+                  "name": "Nissan-Elec2"
+                },
+                {
+                  "name": "Nissan-Elec3"
+                },
+                {
+                  "name": "Nissan-Elec4"
+                }
+              ]
+            },
+            {
+              "name": "Commercial",
+              "models": [
+                {
+                  "name": "Nissan-Commerc1"
+                },
+                {
+                  "name": "Nissan-Commerc2"
+                },
+                {
+                  "name": "Nissan-Commerc3"
+                },
+                {
+                  "name": "Nissan-Commerc4"
+                },
+                {
+                  "name": "Nissan-Commerc5"
+                },
+                {
+                  "name": "Nissan-Commerc6"
+                },
+                {
+                  "name": "Nissan-Commerc7"
+                },
+                {
+                  "name": "Nissan-Commerc8"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

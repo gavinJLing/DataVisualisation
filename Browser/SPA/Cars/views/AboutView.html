@@ -1,0 +1,16 @@
+aboutView</br>
+<p>This is an example of a 'single page appliction' (SPA), where the application is just a single page of html, with dynamically rendered content based on the data feeds presented by ajax responses. This is significant becasue it has several interesting opertunities that need to be realised.</p>
+<p>Benefits of SPA approach.<br>
+<div id="benefits">
+- No client/server page reload  ( less network traffic)
+- Dynamic client side page behaviour provided by javascript
+- Content (data) fetched as required - less network traffic bandwidth)
+    - Content picked from Browser Cache - but that will still round trip to server…
+    - Page managed cache content ie. check page cache var for hit - retrieve from cache if found else Lazy load + cache pop if not found -cuts out network calls.
+- Navigation typically achieved via html ‘fragment identifiers’  (i.e. {relative url}#home   or #pageA
+    - Browser Back and Forward buttons work as expected - unlike .asp/.jsp server side page renders
+    - Implemented using Fragment Identifiers ({url}#pageA  ,  Javascript location.hash  & ‘hashchange’ event listener
+- Server side push to update a browser from the server (ie… notifications)
+    - comet (reverse ajax) long polling
+    - web sockets (requires modern browsers) - protocol upgrade Fire walls issue?
+</div>

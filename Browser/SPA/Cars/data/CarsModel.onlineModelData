@@ -1,0 +1,494 @@
+
+http://www.objgen.com/json
+
+
+
+
+Title = Live JSON generator
+version n = 1.0
+releaseDate d = 2018-06-22
+
+User   
+  name = Gavin J Ling
+  id = gavin.ling
+  role = customer
+  email[] s = gavlar@example.com, thegavlar@example.org
+
+country[0]
+  name s = Germany
+  manufactures[0]
+    name = Audi
+    modelTypes[0]
+      name = SUV
+      models[0]
+        name = Q7
+      models[1]
+        name = Q7S
+      models[2]
+        name = Q5
+      models[3]
+        name = Q5S
+      models[4]
+        name = Q3
+
+    modelTypes[1]
+      name = Coupe
+      models[0]
+        name = A1
+      models[1]
+        name = A2
+      models[2]
+        name = A3
+      models[3]
+        name = A3S
+      models[4]
+        name = A3RS
+      models[5]
+        name = A4
+      models[6]
+        name = A4S
+      models[7]
+        name = A4RS
+      models[8]
+        name = A5
+      models[9]
+        name = A5S
+      models[10]
+        name = A5RS
+      models[11]
+        name = A6
+      models[12]
+        name = A6S
+      models[13]
+        name = A6RS
+      models[14]
+        name = A7
+      models[15]
+        name = A7S
+      models[16]
+        name = A7RS
+      models[17]
+        name = A8
+      models[18]
+        name = A8S
+      models[19]
+        name = A8RS
+
+    modelTypes[2]
+      name = Saloon
+      models[0]
+        name = A4 sportback
+      models[1]
+        name = A5 sportback
+      models[2]
+        name = A6 sportback
+
+    modelTypes[3]
+      name = Sports
+      models[0]
+        name = A8
+      models[1]
+        name = A8 v10
+      models[2]
+        name = A3 v12 spider
+
+    modelTypes[4]
+      name = Electric
+      models[0]
+        name = eTron
+
+  manufactures[1]
+    name = Porche 
+    modelTypes[0]
+      name = SUV
+      models[0]
+        name = Cayenne
+      models[1]
+        name = Macan
+    modelTypes[1]
+      name = Saloon
+      models[0]
+        name = Panamera
+    modelTypes[2]
+      name = Sports
+      models[0]
+        name = 911
+      models[1]
+        name = 718
+
+  manufactures[2]
+    name = BMW 
+    modelTypes[0]
+      name = SUV
+      models[0]
+        name = X1
+      models[1]
+        name = X2
+      models[2]
+        name = X3
+      models[3]
+        name = X4
+    modelTypes[1]
+      name = Saloon
+      models[0]
+        name = BMW 3 series
+      models[1]
+        name = BMW 5 series
+      models[2]
+        name = BMW 6 series
+      models[3]
+        name = BMW 7 series
+
+    modelTypes[2]
+      name = Sports
+      models[0]
+        name = M2 Competition
+      models[1]
+        name = M3 Saloon
+      models[2]
+        name = M4 Coupe
+      models[3]
+        name = M5 Saloon
+      models[4]
+        name = M6 Gran Coupe
+
+country[1]
+  name s = Japan
+  manufactures[0]
+    name = Toyota
+    modelTypes[0]
+      name = SUV
+      models[0]
+        name = Toy-suv1
+      models[1]
+        name = Toy-suv2
+      models[2]
+        name = Toy-suv3
+      models[3]
+        name = Toy-suv4
+
+
+    modelTypes[1]
+      name = Coupe
+      models[0]
+        name = Toy-coup1
+      models[1]
+        name = Toy-coup2
+      models[2]
+        name = Toy-coup3
+      models[3]
+        name = Toy-coup4
+
+    modelTypes[2]
+      name = Saloon
+      models[0]
+        name = Toy-sal1
+      models[1]
+        name = Toy-sal2
+      models[2]
+        name = Toy-sal3
+
+    modelTypes[3]
+      name = Sports
+      models[0]
+        name = Toy-sprt1
+      models[1]
+        name = Toy-sprt2
+      models[2]
+        name = Toy-sprt3
+
+    modelTypes[4]
+      name = Electric
+      models[0]
+        name = Toy-Elec1
+      models[1]
+        name = Toy-Elec2
+      models[2]
+        name = Toy-Elec3
+      models[3]
+        name = Toy-Elec4
+      models[4]
+        name = Toy-Elec5
+      models[5]
+        name = Toy-Elec6
+      models[6]
+        name = Toy-Elec7
+      models[7]
+        name = Toy-Elec8
+  manufactures[1]
+    name = Honda
+    modelTypes[0]
+      name = SUV
+      models[0]
+        name = Hond-suv1
+      models[1]
+        name = Hond-suv2
+      models[2]
+        name = Hond-suv3
+      models[3]
+        name = Hond-suv4
+      models[4]
+        name = Hond-suv5
+      models[5]
+        name = Hond-suv6
+      models[6]
+        name = Hond-suv7
+      models[7]
+        name = Hond-suv8
+
+    modelTypes[1]
+      name = Coupe
+      models[0]
+        name = Hond-coup1
+      models[1]
+        name = Hond-coup2
+      models[2]
+        name = Hond-coup3
+      models[3]
+        name = Hond-coup4
+
+    modelTypes[2]
+      name = Saloon
+      models[0]
+        name = Hond-sal1
+      models[1]
+        name = Hond-sal2
+      models[2]
+        name = Hond-sal3
+      models[3]
+        name = Hond-sal4
+      models[4]
+        name = Hond-sal5
+      models[5]
+        name = Hond-sal6
+      models[6]
+        name = Hond-sal7
+      models[7]
+        name = Hond-sal8
+      models[8]
+        name = Hond-sal9
+
+    modelTypes[3]
+      name = Sports
+      models[0]
+        name = Hond-sprt1
+      models[1]
+        name = Hond-sprt2
+
+
+    modelTypes[4]
+      name = Electric
+      models[0]
+        name = Hond-Elec1
+      models[1]
+        name = Hond-Elec2
+      models[2]
+        name = Hond-Elec3
+      models[3]
+        name = Hond-Elec4
+      models[4]
+        name = Hond-Elec5
+
+
+  manufactures[2]
+    name = Mazda
+    modelTypes[0]
+      name = SUV
+      models[0]
+        name = Mazda-suv1
+
+
+
+    modelTypes[1]
+      name = Coupe
+      models[0]
+        name = Mazda-coup1
+      models[1]
+        name = Mazda-coup2
+
+
+    modelTypes[2]
+      name = Saloon
+      models[0]
+        name = Mazda-sal1
+      models[1]
+        name = Mazda-sal2
+
+
+    modelTypes[3]
+      name = Sports
+      models[0]
+        name = Mazda-sprt1
+      models[1]
+        name = Mazda-sprt2
+      models[2]
+        name = Mazda-sprt3
+      models[3]
+        name = Mazda-sprt4
+      models[4]
+        name = Mazda-sprt5
+      models[5]
+        name = Mazda-sprt6
+      models[6]
+        name = Mazda-sprt7
+      models[7]
+        name = Mazda-sprt8
+      models[8]
+        name = Mazda-sprt9
+
+    modelTypes[4]
+      name = Electric
+      models[0]
+        name = Mazda-Elec1
+      models[1]
+        name = Mazda-Elec2
+
+
+  manufactures[3]
+    name = Mitsubishi
+    modelTypes[0]
+      name = SUV
+      models[0]
+        name = Mitsu-suv1
+      models[1]
+        name = Mitsu-suv2
+      models[2]
+        name = Mitsu-suv3
+
+
+
+    modelTypes[1]
+      name = Coupe
+      models[0]
+        name = Mitsu-coup1
+      models[1]
+        name = Mitsu-coup2
+      models[2]
+        name = Mitsu-coup3
+
+
+    modelTypes[2]
+      name = Saloon
+      models[0]
+        name = Mitsu-sal1
+      models[1]
+        name = Mitsu-sal2
+
+
+    modelTypes[3]
+      name = Sports
+      models[0]
+        name = Mitsu-sprt1
+      models[1]
+        name = Mitsu-sprt2
+      models[2]
+        name = Mitsu-sprt3
+      models[3]
+        name = Mitsu-sprt4
+
+    modelTypes[4]
+      name = Electric
+      models[0]
+        name = Mitsu-Elec1
+      models[1]
+        name = Mitsu-Elec2
+ 
+
+  manufactures[4]
+    name = Suzuki
+    modelTypes[0]
+      name = SUV
+      models[0]
+        name = Suzuki-suv1
+
+
+    modelTypes[1]
+      name = Coupe
+      models[0]
+        name = Suzuki-coup1
+
+    modelTypes[2]
+      name = Saloon
+      models[0]
+        name = Suzuki-sal1
+      models[1]
+        name = Suzuki-sal2
+
+
+    modelTypes[3]
+      name = Sports
+      models[0]
+        name = Suzuki-sprt1
+
+
+    modelTypes[4]
+      name = Electric
+      models[0]
+        name = Suzuki-Elec1
+    modelTypes[5]
+      name = Commercial
+      models[0]
+        name = Suzuki-comm1
+      models[1]
+        name = Suzuki-comm2
+
+
+  manufactures[5]
+    name = Nissan
+    modelTypes[0]
+      name = SUV
+      models[0]
+        name = Nissan-suv1
+
+
+
+    modelTypes[1]
+      name = Coupe
+      models[0]
+        name = Nissan-coup1
+      models[1]
+        name = Nissan-coup2
+
+
+    modelTypes[2]
+      name = Saloon
+      models[0]
+        name = Nissan-sal1
+
+
+    modelTypes[3]
+      name = Sports
+      models[0]
+        name = Nissan-sprt1
+
+
+    modelTypes[4]
+      name = Electric
+      models[0]
+        name = Nissan-Elec1
+      models[1]
+        name = Nissan-Elec2
+      models[2]
+        name = Nissan-Elec3
+      models[3]
+        name = Nissan-Elec4
+
+    modelTypes[5]
+      name = Commercial
+      models[0]
+        name = Nissan-Commerc1
+      models[1]
+        name = Nissan-Commerc2
+      models[2]
+        name = Nissan-Commerc3
+      models[3]
+        name = Nissan-Commerc4
+      models[4]
+        name = Nissan-Commerc5
+      models[5]
+        name = Nissan-Commerc6
+      models[6]
+        name = Nissan-Commerc7
+      models[7]
+        name = Nissan-Commerc8
+  
