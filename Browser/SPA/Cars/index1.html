@@ -6,10 +6,14 @@
 
     <!-- The CSS theme for the site. -->
     <link rel="stylesheet" href="css/theme.css" />
-	<link rel="stylesheet" href="css/bootstrap4.1.1/bootstrap.css" >
-    <!-- Include jQuery. -->
-    <script src="js/jquery-3.3.1.min.js"></script>
+	  <link rel="stylesheet" href="css/bootstrap4.1.1/bootstrap.css" >
 
+
+    <!-- Include jQuery. -->
+    <script src="js/jquery-3.3.1.min.js" ></script>
+    <script src="js/bootstrap.bundle.js" ></script>
+    <script src="js/popper.min.js" ></script>
+    <script src="js/tooltip.min.js" ></script>
   </head>
 <head>
 
@@ -30,14 +34,51 @@ var tempData={};
     </div>
 
 	<div id="content-container" >
-    	<div id="content" class="jumbotron">
-	    	<!-- Dynamic content will be placed here by JavaScript. -->
+    	<div class="jumbotron">
+
+      <button  type="button" class="btn btn-danger pop" data-container="body" data-toggle="popover" data-placement="right" data-content="Optional parameter: Skip if this was not requested<br>                                    A placement group is a logical grouping of instances within a single Availability                                     Zone. Using placement groups enables applications to get the full-bisection bandwidth                                     and low-latency network performance required for tightly coupled, node-to-node                                     communication typical of HPC applications.<br>                                    This only applies to cluster compute instances: cc2.8xlarge, cg1.4xlarge, cr1.8xlarge, hi1.4xlarge and hs1.8xlarge.<br>                                    More info: <a href=&quot;http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html&quot; target=&quot;_blank&quot;>Click here...</a>"
+  data-original-title="" title="">
+    HOVER OVER ME
+    </button>
+    <br><br>
+    <button type="button" class="btn btn-info pop" data-container="body" data-toggle="popover" data-placement="right" data-content="Optional parameter: Skip if this was not requested<br>                                    A placement group is a logical grouping of instances within a single Availability                                     Zone. Using placement groups enables applications to get the full-bisection bandwidth                                     and low-latency network performance required for tightly coupled, node-to-node                                     communication typical of HPC applications.<br>                                    This only applies to cluster compute instances: cc2.8xlarge, cg1.4xlarge, cr1.8xlarge, hi1.4xlarge and hs1.8xlarge.<br>                                    More info: <a href=&quot;http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html&quot; target=&quot;_blank&quot;>Click here...</a>"
+  data-original-title="" title="">
+    HOVER OVER ME... Again!
+    </button><br><br>
+    <button type="button" class="btn btn-success pop" data-container="body" data-toggle="popover" data-placement="right" data-content="Optional parameter: Skip if this was not requested<br>                                    A placement group is a logical grouping of instances within a single Availability                                     Zone. Using placement groups enables applications to get the full-bisection bandwidth                                     and low-latency network performance required for tightly coupled, node-to-node                                     communication typical of HPC applications.<br>                                    This only applies to cluster compute instances: cc2.8xlarge, cg1.4xlarge, cr1.8xlarge, hi1.4xlarge and hs1.8xlarge.<br>                                    More info: <a href=&quot;http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html&quot; target=&quot;_blank&quot;>Click here...</a>"
+  data-original-title="" title="">
+    Okay one more time... !
+    </button>
+  <br><br>
+
+        <div id="content">
+          <!-- Dynamic content will be placed here by JavaScript. -->
+        </div>
+        
+	    	
 		</div>
 	</div>
 
 <!-- The JavaScript code for dynamic behavior. -->
 <script src="js/navigation.js"></script> 
-<script src="js/dataLoader.js"></script> 
+<script>
+  $("#pop1").popover({ trigger: "manual" , html: true, animation:false})
+    .on("mouseenter", function () {
+        var _this = this;
+        $(this).popover("show");
+        $(".popover").on("mouseleave", function () {
+            $(_this).popover('hide');
+        });
+    }).on("mouseleave", function () {
+        var _this = this;
+        setTimeout(function () {
+            if (!$(".popover:hover").length) {
+                $(_this).popover("hide");
+            }
+        }, 300);
+});
+
+</script> 
 
 </body>
 </html>
